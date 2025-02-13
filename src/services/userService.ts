@@ -1,5 +1,6 @@
 
 const URL_BASE = 'http://localhost:3000/api/';
+
 export const getUsers = async () => {
     try {
         const response = await fetch(URL_BASE+'users/',{
