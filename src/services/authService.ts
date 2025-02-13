@@ -1,5 +1,5 @@
 
-import User from "../models/user";
+import User from "../models/user2";
 import { fetchAPI } from "../utils/FetchAPI";
 
 const URL_BASE = 'http://localhost:3000/api/';
