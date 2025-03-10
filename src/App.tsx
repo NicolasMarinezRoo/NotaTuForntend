@@ -6,6 +6,9 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Register from './pages/Register'
 import { Toaster } from 'react-hot-toast'
+import Notas from './pages/Notas'
+import Profile from './pages/Perfil'
+import UserList from './pages/userList'
 
 function App() {
 
@@ -17,11 +20,14 @@ function App() {
           position="top-center"
           reverseOrder={false}
         />
-      <div className='container mx-auto px-10 py-12'></div>
+      <div className='container mx-auto'></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/notas" element={<Notas />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/userlist" element={<UserList />} />
         </Routes>
       </BrowserRouter>
     </>

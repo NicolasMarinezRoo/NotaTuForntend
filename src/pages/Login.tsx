@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
 import { loginUser } from '../services/authService'
+import toast from 'react-hot-toast'
 
 export default function Login() {
     const [form, setForm] = useState(
@@ -14,10 +15,26 @@ export default function Login() {
         e.preventDefault()
         try {
            /* const respuesta =*/ await loginUser(form.email, form.password)
-           setMessage('Login suxessfull')
-            console.log(message)
+           toast.success('Sesion iniciada correctamente',
+            {
+              style: {
+                borderRadius: '10px',
+                background: '#333',
+                color: '#fff',
+              },
+            }
+          );
             // Redirigir a otra pagina
         } catch (error) {
+            toast.error("Fallo al iniciar sesion",
+                {
+                  style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                  },
+                }
+              );
             const msg = error instanceof Error ? error.message : 'An error occurred'
             setMessage(msg)
         }
@@ -29,6 +46,7 @@ export default function Login() {
 
         setForm({ ...form, [name]: value })
     }
+    console.log(message)
     return (
         <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
             <div className="mb-5">
