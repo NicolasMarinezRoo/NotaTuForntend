@@ -25,9 +25,7 @@ export const loginUser = async (email: string, password: string) => {
     }
 
 }
-export const registerUser = async (user: Partial<User>)  => {
-    console.log(user)
-    
+export const registerUser = async (user: Partial<User>)  => { 
     return await fetchAPI(URL_BASE+'auth/register', {
         method: 'POST',
         headers: {

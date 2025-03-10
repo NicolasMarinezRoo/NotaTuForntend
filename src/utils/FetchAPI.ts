@@ -1,6 +1,5 @@
 export const fetchAPI = async (endPoint:string, options = {})=>{
     try {
-        console.log(endPoint+'   '+ options)
         const response = await fetch(endPoint, options)
 
         if(response.status == 401){
@@ -12,7 +11,6 @@ export const fetchAPI = async (endPoint:string, options = {})=>{
             const errorData = await response.json().catch(() => null)
             throw new Error(errorData?.message || 'Error desconocido')
         }
-        console.log(response)
         return await response.json()
     } catch (error) {
         const msg = error instanceof Error ? error.message : 'Error desconocido'
