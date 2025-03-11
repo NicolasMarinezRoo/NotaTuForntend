@@ -7,7 +7,7 @@ const URL_BASE = import.meta.env.VITE_URL_BASE
 export const loginUser = async (email: string, password: string) => {
 
     try {
-        const response = await fetch(`${URL_BASE}auth/login`,
+        const response = await fetch(`${URL_BASE}/auth/login`,
             {
                 method: 'POST',
                 headers: {
@@ -27,7 +27,7 @@ export const loginUser = async (email: string, password: string) => {
 
 }
 export const registerUser = async (user: Partial<User>)  => { 
-    return await fetchAPI(URL_BASE+'auth/register', {
+    return await fetchAPI(URL_BASE+'/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
